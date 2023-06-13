@@ -1,0 +1,233 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GM-.####",
+ "creation": "2023-06-12 19:16:28.701414",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "first_name",
+  "last_name",
+  "full_name",
+  "column_break_wq5ni",
+  "email",
+  "mobile",
+  "column_break_k9krc",
+  "gender",
+  "dob",
+  "age",
+  "body_details_section",
+  "weight",
+  "height",
+  "column_break_d3ske",
+  "bmi",
+  "gym_goal",
+  "emergency_contact_section",
+  "contact_person_name",
+  "column_break_dan81",
+  "relationship",
+  "phone_no",
+  "addresses_section",
+  "streat",
+  "pobox",
+  "column_break_snc5y",
+  "city",
+  "state",
+  "section_break_rdmw4",
+  "registration_form"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wq5ni",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Phone",
+   "label": "Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "column_break_k9krc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "\nMale\nFemale",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Birth Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age",
+   "read_only": 1
+  },
+  {
+   "fieldname": "body_details_section",
+   "fieldtype": "Section Break",
+   "label": "Body Details"
+  },
+  {
+   "description": "In CM",
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "description": "In Kg",
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Height"
+  },
+  {
+   "fieldname": "column_break_d3ske",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bmi",
+   "fieldtype": "Float",
+   "label": "BMI",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gym_goal",
+   "fieldtype": "Select",
+   "label": "Gym Goal",
+   "options": "\nWeight Loss\nMuscle Gain\nMaintain Stability\nWeight Gain",
+   "reqd": 1
+  },
+  {
+   "fieldname": "emergency_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Emergency Contact"
+  },
+  {
+   "fieldname": "contact_person_name",
+   "fieldtype": "Data",
+   "label": "Contact Person Name"
+  },
+  {
+   "fieldname": "column_break_dan81",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "relationship",
+   "fieldtype": "Data",
+   "label": "Relationship"
+  },
+  {
+   "fieldname": "phone_no",
+   "fieldtype": "Phone",
+   "label": "Phone No",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "addresses_section",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "streat",
+   "fieldtype": "Data",
+   "label": "Streat"
+  },
+  {
+   "fieldname": "pobox",
+   "fieldtype": "Small Text",
+   "label": "P.O.box"
+  },
+  {
+   "fieldname": "column_break_snc5y",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "section_break_rdmw4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "registration_form",
+   "fieldtype": "Link",
+   "label": "Registration Form",
+   "options": "Gym Registration Form",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-13 07:14:28.929764",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Member",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
