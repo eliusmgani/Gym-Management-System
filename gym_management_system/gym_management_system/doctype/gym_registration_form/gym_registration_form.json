@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "GRF-{####}",
+ "autoname": "GRF-.####",
  "creation": "2023-06-11 22:27:42.578974",
  "default_view": "List",
  "doctype": "DocType",
@@ -51,7 +51,7 @@
   },
   {
    "fieldname": "weight",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "label": "Weight"
   },
   {
@@ -71,13 +71,14 @@
   },
   {
    "fieldname": "height",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "label": "Height"
   },
   {
    "fieldname": "posting_date",
    "fieldtype": "Date",
-   "label": "Posting Date"
+   "label": "Posting Date",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_k9krc",
@@ -97,7 +98,8 @@
   {
    "fieldname": "posting_time",
    "fieldtype": "Time",
-   "label": "Posting Time"
+   "label": "Posting Time",
+   "read_only": 1
   },
   {
    "fieldname": "emergency_contact_section",
@@ -187,7 +189,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-12 19:22:20.425510",
+ "modified": "2023-06-13 06:58:00.306682",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Registration Form",

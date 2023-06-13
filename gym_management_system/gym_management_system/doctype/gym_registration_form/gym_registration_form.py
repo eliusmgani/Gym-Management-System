@@ -3,25 +3,36 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.utils import nowdate, nowtime
+from gym_management_system.gym_management_system.doctype.gym_member.gym_member import create_gym_member
 
 class GymRegistrationForm(Document):
     def before_insert(self):
         self.full_name = self.first_name + " " + self.last_name
+        self.posting_date = nowdate()
+        self.posting_time = nowtime()
+    
     def validate(self):
-        if self.weight and self.height:
-            self.bmi = (self.weight / (self.height * self.height)) * 10000
-    def before_submit(self):
         pass
-    def create_gym_member(self):
-            pass
-    # def create_user(self):
-    #     user = frappe.new_doc("User")
-	# 	user.email = self.email
-	# 	user.first_name = self.first_name
-	# 	user.last_name = self.last_name
-	# 	user.save()
-	# 	user.add_roles("Gym Member")
-	# 	user.save()
-	# 	self.user = user.name
-	# 	self.save()
-                        
+
+    def before_submit(self):
+        details = frappe._dict({
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "email": self.email,
+            "dob": self.dob,
+            "gender": self.gender,
+            "mobile": self.mobile,
+            "weight": self.weight,
+            "height": self.height,
+            "gym_goal": self.gym_goal,
+            "contact_person_name": self.contact_person_name,
+            "relationship": self.relationship,
+            "phone_no": self.phone_no,
+            "streat": self.streat,
+            "city": self.city,
+            "state": self.state,
+            "pobox": self.pobox,
+            "registration_form": self.name
+        })
+        create_gym_member(details)
