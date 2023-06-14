@@ -1,0 +1,174 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GMS-.####",
+ "creation": "2023-06-13 23:42:01.015224",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gym_member",
+  "full_name",
+  "gym_goals",
+  "column_break_etdv",
+  "status",
+  "valid_after_end_of_prev_membership",
+  "prev_membership",
+  "membership_details_section",
+  "membership_option",
+  "membership_type",
+  "membership_duration",
+  "column_break_rd8n",
+  "start_date",
+  "end_date",
+  "membership_cost",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "gym_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gym Member",
+   "options": "Gym Member",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "gym_member.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "column_break_etdv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "gym_member.gym_goal",
+   "fieldname": "gym_goals",
+   "fieldtype": "Data",
+   "label": "Gym Goals",
+   "read_only": 1
+  },
+  {
+   "fieldname": "membership_details_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Membership Start Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Membership End Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rd8n",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "In Days",
+   "fieldname": "membership_duration",
+   "fieldtype": "Int",
+   "label": "Membership Duration",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "membership_option.membership_cost",
+   "fetch_if_empty": 1,
+   "fieldname": "membership_cost",
+   "fieldtype": "Data",
+   "label": "Membership Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Membership",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Membership",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "membership_option",
+   "fieldtype": "Link",
+   "label": "Membership Option",
+   "options": "Gym Membership Option",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "membership_option.type",
+   "fetch_if_empty": 1,
+   "fieldname": "membership_type",
+   "fieldtype": "Select",
+   "label": "Membership Type",
+   "options": "\nSingle Member\nFamily Shared",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nOn Hold\nExpired",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "If ticked, means this membership will start after the of previous membership",
+   "fieldname": "valid_after_end_of_prev_membership",
+   "fieldtype": "Check",
+   "label": "Valid After End of Prev Membership"
+  },
+  {
+   "fieldname": "prev_membership",
+   "fieldtype": "Link",
+   "label": "Prev Membership",
+   "options": "Gym Membership",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-14 11:44:36.997661",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Membership",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
