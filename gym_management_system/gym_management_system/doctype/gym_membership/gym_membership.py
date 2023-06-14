@@ -16,6 +16,7 @@ class GymMembership(Document):
 		
 		self.membership_duration = frappe.get_doc("Gym Membership Option", self.membership_option).get_days()
 		self.set_date_range()
+		self.validate_status()
 
 	def set_date_range(self):
 		prev_membership = frappe.get_all("Gym Membership", 
@@ -34,3 +35,12 @@ class GymMembership(Document):
 			self.start_date = nowdate()
 			self.end_date = add_days(self.start_date, self.membership_duration)
 		
+	def validate_status(self):
+		if (
+			self.valid_after_end_of_prev_membership and
+			self.prev_membership and
+			self.start_date > getdate(nowdate()) and
+			self.status == "Active"
+		):
+			self.status = "On Hold"
+	
