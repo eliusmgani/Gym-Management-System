@@ -113,23 +113,24 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"gym_management_system.tasks.all"
-#	],
-#	"daily": [
-#		"gym_management_system.tasks.daily"
-#	],
-#	"hourly": [
-#		"gym_management_system.tasks.hourly"
-#	],
-#	"weekly": [
-#		"gym_management_system.tasks.weekly"
-#	],
-#	"monthly": [
-#		"gym_management_system.tasks.monthly"
-#	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"gym_management_system.tasks.all"
+	# ],
+	"daily": [
+		"gym_management_system.gym_management_system.api.check_membership_expiry",
+		"gym_management_system.gym_management_system.api.check_membership_onhold"
+	],
+	# "hourly": [
+	# 	"gym_management_system.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"gym_management_system.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"gym_management_system.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
