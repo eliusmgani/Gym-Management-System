@@ -14,6 +14,7 @@
   "column_break_wq5ni",
   "email",
   "mobile",
+  "profile",
   "column_break_k9krc",
   "gender",
   "dob",
@@ -199,11 +200,17 @@
    "label": "Registration Form",
    "options": "Gym Registration Form",
    "read_only": 1
+  },
+  {
+   "fieldname": "profile",
+   "fieldtype": "Image",
+   "label": "Profile"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-20 18:11:15.773866",
+ "max_attachments": 2,
+ "modified": "2023-06-20 18:26:01.452298",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Member",
@@ -227,5 +234,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "track_changes": 1
+ "track_changes": 1,
+ "translated_doctype": 1
 }

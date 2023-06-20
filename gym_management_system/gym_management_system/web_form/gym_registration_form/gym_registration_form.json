@@ -17,7 +17,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 2,
- "modified": "2023-06-13 09:08:52.863561",
+ "modified": "2023-06-20 18:21:47.080900",
  "modified_by": "eliasmgani@gmail.com",
  "module": "Gym Management System",
  "name": "gym-registration-form",
@@ -65,6 +65,17 @@
    "options": "Email",
    "read_only": 0,
    "reqd": 1,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldtype": "Attach Image",
+   "hidden": 0,
+   "label": "Profile",
+   "max_length": 0,
+   "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
    "show_in_filter": 0
   },
   {

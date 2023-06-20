@@ -11,6 +11,7 @@
   "first_name",
   "email",
   "gender",
+  "profile",
   "column_break_wq5ni",
   "last_name",
   "mobile",
@@ -184,12 +185,18 @@
    "fieldname": "pobox",
    "fieldtype": "Small Text",
    "label": "P.O.box"
+  },
+  {
+   "fieldname": "profile",
+   "fieldtype": "Image",
+   "label": "Profile"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-20 18:10:55.523744",
+ "max_attachments": 2,
+ "modified": "2023-06-20 18:26:26.733060",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Registration Form",
@@ -212,5 +219,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "track_changes": 1
+ "track_changes": 1,
+ "translated_doctype": 1
 }
