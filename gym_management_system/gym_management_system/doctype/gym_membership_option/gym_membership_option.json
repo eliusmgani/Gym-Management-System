@@ -49,7 +49,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-14 09:31:47.735554",
+ "modified": "2023-06-20 18:11:03.857741",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Membership Option",
@@ -72,7 +72,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "track_changes": 1
 }
