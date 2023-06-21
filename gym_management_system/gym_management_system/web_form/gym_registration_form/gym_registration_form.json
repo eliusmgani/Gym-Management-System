@@ -17,7 +17,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 2,
- "modified": "2023-06-20 18:21:47.080900",
+ "modified": "2023-06-20 22:14:03.792625",
  "modified_by": "eliasmgani@gmail.com",
  "module": "Gym Management System",
  "name": "gym-registration-form",
@@ -28,7 +28,7 @@
  "show_list": 0,
  "show_sidebar": 0,
  "success_message": "Thank you for your Request",
- "title": "GYM Registration Form",
+ "title": "Gym Registration Form",
  "web_form_fields": [
   {
    "allow_read_on_all_link_options": 0,

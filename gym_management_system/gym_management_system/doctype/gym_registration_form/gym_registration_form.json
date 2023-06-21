@@ -188,15 +188,16 @@
   },
   {
    "fieldname": "profile",
-   "fieldtype": "Image",
+   "fieldtype": "Attach Image",
    "label": "Profile"
   }
  ],
+ "image_field": "profile",
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
  "max_attachments": 2,
- "modified": "2023-06-20 18:26:26.733060",
+ "modified": "2023-06-20 21:38:00.700531",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Registration Form",
