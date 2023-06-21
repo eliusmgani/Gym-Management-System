@@ -38,6 +38,11 @@ class GymMember(Document):
 		user.email = self.email
 		user.first_name = self.first_name
 		user.last_name = self.last_name
+		user.gender = self.gender
+		user.phone = self.phone_number
+		user.mobile = self.phone_number
+		user.birth_date = self.birth_date
+		user.send_welcome_email = 1
 		user.enabled = 1
 		user.flags.ignore_permissions = True
 		user.save(ignore_permissions=True)

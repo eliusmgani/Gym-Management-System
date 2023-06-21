@@ -203,14 +203,15 @@
   },
   {
    "fieldname": "profile",
-   "fieldtype": "Image",
+   "fieldtype": "Attach Image",
    "label": "Profile"
   }
  ],
+ "image_field": "profile",
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 2,
- "modified": "2023-06-20 18:26:01.452298",
+ "modified": "2023-06-20 21:36:13.837569",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Member",
