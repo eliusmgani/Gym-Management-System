@@ -88,24 +88,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Gym Membership",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Gym Membership",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
    "fieldname": "membership_option",
    "fieldtype": "Link",
    "label": "Membership Option",
@@ -144,12 +126,21 @@
    "label": "Prev Membership",
    "options": "Gym Membership",
    "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Membership",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-20 17:55:07.656243",
+ "modified": "2023-06-25 17:51:33.135481",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Membership",
