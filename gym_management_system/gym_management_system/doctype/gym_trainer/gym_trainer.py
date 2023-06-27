@@ -10,9 +10,13 @@ class GymTrainer(Document):
 	
 	def after_insert(self):
 		self.create_user()
-
+	
+	def validate(self):
+		if frappe.db.exists("Gym Trainer", {"email": self.email, "name": ["!=", self.name]}):
+			frappe.throw("This email is already registered")
+	
 	def create_user(self):
-		if frappe.db.exists("Gym Member", self.full_name, self.email):
+		if frappe.db.exists("User", self.email):
 			return
 		
 		user = frappe.new_doc("User")
