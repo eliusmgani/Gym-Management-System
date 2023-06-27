@@ -36,8 +36,7 @@
   "column_break_snc5y",
   "city",
   "state",
-  "section_break_rdmw4",
-  "registration_form"
+  "section_break_rdmw4"
  ],
  "fields": [
   {
@@ -195,13 +194,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "registration_form",
-   "fieldtype": "Link",
-   "label": "Registration Form",
-   "options": "Gym Registration Form",
-   "read_only": 1
-  },
-  {
    "fieldname": "profile",
    "fieldtype": "Attach Image",
    "label": "Profile"
@@ -211,7 +203,7 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 2,
- "modified": "2023-06-20 21:36:13.837569",
+ "modified": "2023-06-24 16:44:54.854924",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Member",

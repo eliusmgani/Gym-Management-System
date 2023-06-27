@@ -4,8 +4,10 @@
 frappe.ui.form.on('Gym Member', {
 	refresh: (frm) => {
 	},
-	onload: (frm) => { 
-		frm.trigger("get_age");
+	onload: (frm) => {
+		if (!frm.is_new()) {
+			frm.trigger("get_age");
+		}
 	 },
 	get_age: (frm) => {
 		let ageMS = Date.parse(Date()) - Date.parse(frm.doc.dob);
@@ -13,7 +15,9 @@ frappe.ui.form.on('Gym Member', {
 		age.setTime(ageMS);
 		let years = age.getFullYear() - 1970;
 		let age_str = years + ' Year(s) ' + age.getMonth() + ' Month(s) ' + age.getDate() + ' Day(s)';
-		frappe.db.set_value(frm.doc.doctype, frm.doc.name, "age", age_str);
-		frm.refresh_field("age");
+		if (frm.doc.age != age_str) {
+			frappe.db.set_value(frm.doc.doctype, frm.doc.name, "age", age_str);
+			frm.refresh_field("age");
+		}
 	},
 });

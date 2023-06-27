@@ -7,6 +7,9 @@ from frappe.utils import nowdate, nowtime, get_url_to_form
 
 class GymMember(Document):
 	def before_insert(self):
+		if frappe.db.exists("Gym Member", {"email": self.email}):
+			frappe.throw("This email is already registered")
+		
 		self.full_name = self.first_name + " " + self.last_name
 	
 	def after_insert(self):
@@ -39,9 +42,9 @@ class GymMember(Document):
 		user.first_name = self.first_name
 		user.last_name = self.last_name
 		user.gender = self.gender
-		user.phone = self.phone_number
-		user.mobile = self.phone_number
-		user.birth_date = self.birth_date
+		user.phone = self.mobile
+		user.mobile = self.mobile
+		user.birth_date = self.dob
 		user.send_welcome_email = 1
 		user.enabled = 1
 		user.flags.ignore_permissions = True
@@ -53,8 +56,8 @@ class GymMember(Document):
 @frappe.whitelist()
 def create_gym_member(member_info):
 	if frappe.db.exists("Gym Member", {"full_name": member_info.full_name, "email": member_info.email}):
-		return frappe.db.get_value("Gym Member", {"full_name": member_info.full_name, "email": member_info.email}, "name")
-
+		frappe.throw("Gym Member already exists")
+	
 	gym_member = frappe.new_doc("Gym Member")
 	gym_member.update(member_info)
 	gym_member.save(ignore_permissions=True)
