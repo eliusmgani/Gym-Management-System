@@ -14,6 +14,7 @@
   "column_break_nlpx",
   "gender",
   "birth_date",
+  "age",
   "profile",
   "contact_details_section",
   "phone_number",
@@ -118,11 +119,18 @@
    "fieldname": "birth_date",
    "fieldtype": "Date",
    "label": "Birth Date"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age",
+   "read_only": 1
   }
  ],
+ "image_field": "profile",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-20 22:26:23.605630",
+ "modified": "2023-06-25 17:35:11.192673",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Trainer",
