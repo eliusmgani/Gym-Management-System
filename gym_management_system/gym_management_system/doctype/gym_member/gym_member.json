@@ -8,6 +8,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "members_details_tab",
   "first_name",
   "last_name",
   "full_name",
@@ -35,8 +36,7 @@
   "pobox",
   "column_break_snc5y",
   "city",
-  "state",
-  "section_break_rdmw4"
+  "state"
  ],
  "fields": [
   {
@@ -103,7 +103,7 @@
   },
   {
    "fieldname": "body_details_section",
-   "fieldtype": "Section Break",
+   "fieldtype": "Tab Break",
    "label": "Body Details"
   },
   {
@@ -126,6 +126,7 @@
    "fieldname": "bmi",
    "fieldtype": "Float",
    "label": "BMI",
+   "precision": "2",
    "read_only": 1
   },
   {
@@ -137,7 +138,7 @@
   },
   {
    "fieldname": "emergency_contact_section",
-   "fieldtype": "Section Break",
+   "fieldtype": "Tab Break",
    "label": "Emergency Contact"
   },
   {
@@ -162,7 +163,7 @@
   },
   {
    "fieldname": "addresses_section",
-   "fieldtype": "Section Break",
+   "fieldtype": "Tab Break",
    "label": "Address"
   },
   {
@@ -190,20 +191,21 @@
    "label": "State"
   },
   {
-   "fieldname": "section_break_rdmw4",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "profile",
    "fieldtype": "Attach Image",
    "label": "Profile"
+  },
+  {
+   "fieldname": "members_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Member's Details"
   }
  ],
  "image_field": "profile",
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 2,
- "modified": "2023-06-24 16:44:54.854924",
+ "modified": "2023-06-28 14:53:40.385340",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Member",
@@ -224,6 +226,7 @@
   }
  ],
  "quick_entry": 1,
+ "search_fields": "full_name, gender,bmi",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
