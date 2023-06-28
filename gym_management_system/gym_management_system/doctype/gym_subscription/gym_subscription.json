@@ -1,0 +1,274 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GS-.####",
+ "creation": "2023-06-28 12:24:48.022394",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "overview",
+  "gym_member",
+  "members_name",
+  "members_goal",
+  "column_break_d84g",
+  "posting_date",
+  "posting_time",
+  "gender",
+  "age",
+  "gym_workout_exercise_tab",
+  "gym_plan",
+  "workout_days",
+  "column_break_j9fwf",
+  "plan_name",
+  "workout_duration",
+  "workout_details_section",
+  "workouts",
+  "subscription_details_tab",
+  "gym_trainer",
+  "trainer_name",
+  "column_break_9tuw",
+  "total_days",
+  "start_date",
+  "end_date",
+  "payments_tab",
+  "subscription_amount",
+  "subscription_status",
+  "paid_amount",
+  "column_break_kdtgp",
+  "discount_amount",
+  "paid",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "gym_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gym Member",
+   "options": "Gym Member",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "gym_member.full_name",
+   "fieldname": "members_name",
+   "fieldtype": "Data",
+   "label": "Member FullName",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_d84g",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "gym_member.gym_goal",
+   "fieldname": "members_goal",
+   "fieldtype": "Data",
+   "label": "Member Goal"
+  },
+  {
+   "fetch_from": "gym_member.gender",
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "gym_member.age",
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subscription_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Subscription Details"
+  },
+  {
+   "fieldname": "gym_plan",
+   "fieldtype": "Link",
+   "label": "Gym Plan",
+   "options": "Gym Workout Plan",
+   "permlevel": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "gym_plan.workout_trainer",
+   "fieldname": "gym_trainer",
+   "fieldtype": "Data",
+   "label": "Gym Trainer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9tuw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Subscription Start Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Subscription End Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gym_workout_exercise_tab",
+   "fieldtype": "Tab Break",
+   "label": "Gym Workout & Exercise"
+  },
+  {
+   "description": "In Minutes: to be completed each day",
+   "fetch_from": "workouts.workout_duration",
+   "fieldname": "workout_duration",
+   "fieldtype": "Int",
+   "label": "Workout Duration",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payments_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payments"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Float",
+   "label": "Paid Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kdtgp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Float",
+   "label": "Discount Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "label": "Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Subscription",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "gym_plan.plan_name",
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "gym_plan.trainer_name",
+   "fieldname": "trainer_name",
+   "fieldtype": "Data",
+   "label": "Trainer Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "gym_plan.workout_days",
+   "fieldname": "total_days",
+   "fieldtype": "Int",
+   "label": "Total Days",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "subscription_status",
+   "fieldtype": "Select",
+   "label": "Subscription Status",
+   "options": "\nPending\nOn Hold\nActive\nExpired",
+   "permlevel": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "gym_plan.workout_cost",
+   "fieldname": "subscription_amount",
+   "fieldtype": "Float",
+   "label": "Subscription Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time",
+   "read_only": 1
+  },
+  {
+   "description": "No of days to complete this plan",
+   "fetch_from": "workouts.workout_period",
+   "fieldname": "workout_days",
+   "fieldtype": "Int",
+   "label": "Workout Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_j9fwf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "workout_details_section",
+   "fieldtype": "Section Break",
+   "label": "Workout Details"
+  },
+  {
+   "fieldname": "workouts",
+   "fieldtype": "HTML",
+   "label": "Workouts"
+  },
+  {
+   "fieldname": "overview",
+   "fieldtype": "Tab Break",
+   "label": "Overview"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-28 15:27:42.948477",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Subscription",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
