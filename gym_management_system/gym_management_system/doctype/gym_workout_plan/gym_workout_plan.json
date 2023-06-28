@@ -1,0 +1,174 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GWP-.####",
+ "creation": "2023-06-27 17:16:07.503095",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "overview_tab",
+  "plan_name",
+  "column_break_73pk",
+  "plan_level",
+  "plan_image",
+  "trainer_details_section",
+  "workout_trainer",
+  "column_break_d2l5",
+  "trainer_name",
+  "trainer_level",
+  "section_break_akp2g",
+  "workout_cost",
+  "column_break_vzacb",
+  "workout_duration",
+  "workouts_sb",
+  "plan_details",
+  "workout_practice",
+  "workout_exercise",
+  "workout_description_tab",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "overview_tab",
+   "fieldtype": "Tab Break",
+   "label": "Overview"
+  },
+  {
+   "fieldname": "plan_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Plan Level",
+   "options": "Beginner\nIntermediate\nAdvance\nExpert",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_73pk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plan_image",
+   "fieldtype": "Attach Image",
+   "label": "Plan Image",
+   "reqd": 1
+  },
+  {
+   "fieldname": "trainer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Trainer Details"
+  },
+  {
+   "fieldname": "workout_trainer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Workout Trainer",
+   "options": "Gym Trainer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_d2l5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "workout_trainer.full_name",
+   "fieldname": "trainer_name",
+   "fieldtype": "Data",
+   "label": "Trainer Name"
+  },
+  {
+   "fetch_from": "workout_trainer.trainer_level",
+   "fetch_if_empty": 1,
+   "fieldname": "trainer_level",
+   "fieldtype": "Data",
+   "label": "Trainer Level"
+  },
+  {
+   "fieldname": "section_break_akp2g",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "workout_cost",
+   "fieldtype": "Currency",
+   "label": "Workout Cost"
+  },
+  {
+   "fieldname": "column_break_vzacb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "In Minutes",
+   "fieldname": "workout_duration",
+   "fieldtype": "Int",
+   "label": "Workout duration"
+  },
+  {
+   "fieldname": "workouts_sb",
+   "fieldtype": "Tab Break",
+   "label": "Gym Workouts"
+  },
+  {
+   "fieldname": "plan_details",
+   "fieldtype": "Table",
+   "label": "Workouts",
+   "options": "Gym Workout Plan Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "workout_practice",
+   "fieldtype": "Tab Break",
+   "label": "Workout Exercise"
+  },
+  {
+   "fieldname": "workout_exercise",
+   "fieldtype": "Table",
+   "label": "Exercises",
+   "options": "Gym Workout Exercise"
+  },
+  {
+   "fieldname": "workout_description_tab",
+   "fieldtype": "Tab Break",
+   "label": "Workout Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name",
+   "reqd": 1
+  }
+ ],
+ "image_field": "plan_image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-28 11:15:29.499933",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Workout Plan",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

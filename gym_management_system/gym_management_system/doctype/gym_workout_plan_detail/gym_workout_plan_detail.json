@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-27 16:51:26.962274",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gym_workout",
+  "workout_name",
+  "column_break_y0q2z",
+  "workout_duration",
+  "workout_purpose",
+  "workout_level"
+ ],
+ "fields": [
+  {
+   "fieldname": "gym_workout",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gym Workout",
+   "options": "Gym Workout",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "gym_workout.workout_name",
+   "fetch_if_empty": 1,
+   "fieldname": "workout_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Workout Name"
+  },
+  {
+   "fieldname": "column_break_y0q2z",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "gym_workout.workout_duration",
+   "fetch_if_empty": 1,
+   "fieldname": "workout_duration",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Workout Duration"
+  },
+  {
+   "fetch_from": "gym_workout.workout_purpose",
+   "fetch_if_empty": 1,
+   "fieldname": "workout_purpose",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Workout Purpose"
+  },
+  {
+   "fetch_from": "gym_workout.workout_level",
+   "fetch_if_empty": 1,
+   "fieldname": "workout_level",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Workout Level"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-27 16:53:24.664530",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Workout Plan Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
