@@ -119,7 +119,8 @@ scheduler_events = {
 	# ],
 	"daily": [
 		"gym_management_system.gym_management_system.api.check_membership_expiry",
-		"gym_management_system.gym_management_system.api.check_membership_onhold"
+		"gym_management_system.gym_management_system.api.check_membership_onhold",
+		"gym_management_system.gym_management_system.api.check_subscription_expiry"
 	],
 	# "hourly": [
 	# 	"gym_management_system.tasks.hourly"

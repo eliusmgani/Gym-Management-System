@@ -25,3 +25,10 @@ def check_membership_onhold():
 				"status": "Active",
 				"valid_after_end_of_prev_membership": 0
 			})
+
+def check_subscription_expiry():
+	subscriptions = frappe.get_all("Gym Subscription", filters={"status": "Active", "docstatus": 1})
+	
+	for subscription in subscriptions:
+		sub_doc = frappe.get_doc("Gym Subscription", subscription.name)
+		sub_doc.set_subscription_status(caller="check_subscription_expiry")
