@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-27 12:44:11.122817",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "exercise_name",
+  "exercise_rounds",
+  "exercise_sets",
+  "rest_time_per_round",
+  "column_break_m707s",
+  "exercise_type",
+  "total_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "exercise_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Exercise Name",
+   "options": "Gym Exercise",
+   "reqd": 1
+  },
+  {
+   "fieldname": "exercise_rounds",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Exercise Rounds",
+   "reqd": 1
+  },
+  {
+   "fieldname": "exercise_sets",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Exercise Sets",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_m707s",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exercise_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Exercise Type",
+   "options": "Gym Exercise Type",
+   "reqd": 1
+  },
+  {
+   "description": "In Seconds",
+   "fieldname": "rest_time_per_round",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Rest Time per Round",
+   "reqd": 1
+  },
+  {
+   "description": "time taken to finish this exercise (in minutes)",
+   "fieldname": "total_time",
+   "fieldtype": "Data",
+   "label": "Total Time",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-27 16:09:46.814276",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Workout Exercise",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

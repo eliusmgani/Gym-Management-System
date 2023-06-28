@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GW-.####",
+ "creation": "2023-06-27 13:34:46.597830",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "workout_name",
+  "title",
+  "column_break_73pk",
+  "workout_level",
+  "workout_purpose",
+  "section_break_mzytu",
+  "workout_exercise",
+  "section_break_reu8y",
+  "workout_duration",
+  "column_break_xin2a",
+  "workout_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "workout_name",
+   "fieldtype": "Data",
+   "label": "Workout Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_73pk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "workout_level",
+   "fieldtype": "Select",
+   "label": "Workout Level",
+   "options": "\nBeginner\nIntermediate\nAdvance\nExpert",
+   "reqd": 1
+  },
+  {
+   "fieldname": "workout_purpose",
+   "fieldtype": "Select",
+   "label": "Workout Purpose",
+   "options": "\nStrength Workout\nAerobics Workout\nBalance and Stability Workout\nCoordination  and Agility Workout\nFlexibility and Mobility Workout",
+   "reqd": 1
+  },
+  {
+   "fieldname": "workout_description",
+   "fieldtype": "Text Editor",
+   "label": "Workout Description"
+  },
+  {
+   "fieldname": "workout_exercise",
+   "fieldtype": "Table",
+   "label": "Workout Exercise",
+   "options": "Gym Workout Exercise",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_reu8y",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "In Minutes",
+   "fieldname": "workout_duration",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Workout Duration",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mzytu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xin2a",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-28 10:32:26.403828",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Workout",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}
