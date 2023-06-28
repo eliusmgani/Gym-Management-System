@@ -8,6 +8,13 @@ from frappe.utils import getdate, nowdate, nowtime
 class GymSubscription(Document):
 	def before_insert(self):
 		self.set_missing_values()
+		
+	def validate(self):
+		self.validate_membership()
+		self.set_subscription_status()
+	
+	def before_submit(self):
+		self.validate_payments()
 	
 	def set_missing_values(self):
 		self.posting_date = nowdate()
@@ -17,10 +24,6 @@ class GymSubscription(Document):
 			self.workout_days, self.workout_duration = frappe.get_value(
 				"Gym Workout Plan", self.gym_plan, ["workout_days", "workout_duration"]
 			)
-	
-	def validate(self):
-		self.validate_membership()
-		self.set_subscription_status()
 	
 	def validate_membership(self):
 		if self.gym_member:
@@ -59,3 +62,10 @@ class GymSubscription(Document):
 		else:
 			frappe.db.set_value("Gym Subscription", self.name, "status", status)
 	
+	
+	def validate_payments(self):
+		if self.paid == 0:
+			frappe.throw("Please pay the subscription first")
+		
+		if self.paid_amount == 0:
+			frappe.throw("Paid amount cannot be zero")
