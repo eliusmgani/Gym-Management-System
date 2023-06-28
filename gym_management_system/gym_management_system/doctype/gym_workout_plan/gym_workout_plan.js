@@ -35,14 +35,19 @@ frappe.ui.form.on("Gym Workout Plan Detail", {
 		if (row.gym_workout) {
 			frappe.db.get_doc("Gym Workout", row.gym_workout)
 				.then(workout_doc => {
+					let exercise_names = []
 					for (let d of workout_doc.workout_exercise) {
-						let child = frm.add_child("workout_exercise");
-						child.exercise_name = d.exercise_name;
-						child.exercise_rounds = d.exercise_rounds;
-						child.exercise_sets = d.exercise_sets;
-						child.rest_time_per_round = d.rest_time_per_round;
-						child.exercise_type = d.exercise_type;
-						child.total_time = d.total_time;
+						if (!exercise_names.includes(d.exercise_name)) {
+							let child = frm.add_child("workout_exercise");
+							child.exercise_name = d.exercise_name;
+							child.exercise_rounds = d.exercise_rounds;
+							child.exercise_sets = d.exercise_sets;
+							child.rest_time_per_round = d.rest_time_per_round;
+							child.exercise_type = d.exercise_type;
+							child.total_time = d.total_time;
+							child.gym_workout = workout_doc.name;
+							exercise_names.push(d.exercise_name);
+						}
 					}
 					frm.refresh_field("workout_exercise")
 				})
