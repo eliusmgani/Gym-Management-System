@@ -22,6 +22,7 @@
   "workout_cost",
   "column_break_vzacb",
   "workout_duration",
+  "workout_days",
   "workouts_sb",
   "plan_details",
   "workout_practice",
@@ -97,10 +98,11 @@
    "fieldtype": "Column Break"
   },
   {
-   "description": "In Minutes",
+   "description": "In Minutes: to be completed each day",
    "fieldname": "workout_duration",
    "fieldtype": "Int",
-   "label": "Workout duration"
+   "label": "Workout duration",
+   "non_negative": 1
   },
   {
    "fieldname": "workouts_sb",
@@ -140,14 +142,23 @@
   {
    "fieldname": "plan_name",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "Plan Name",
+   "reqd": 1
+  },
+  {
+   "description": "No of days to complete the program",
+   "fieldname": "workout_days",
+   "fieldtype": "Int",
+   "label": "Workout Days",
+   "non_negative": 1,
    "reqd": 1
   }
  ],
  "image_field": "plan_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-28 11:15:29.499933",
+ "modified": "2023-06-28 14:51:59.092468",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Workout Plan",
@@ -167,8 +178,10 @@
    "write": 1
   }
  ],
+ "search_fields": "plan_name, plan_level, trainer_name",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "track_changes": 1
+ "track_changes": 1,
+ "translated_doctype": 1
 }
