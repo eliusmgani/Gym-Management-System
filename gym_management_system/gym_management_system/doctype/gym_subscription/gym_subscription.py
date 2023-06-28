@@ -20,6 +20,7 @@ class GymSubscription(Document):
 	
 	def validate(self):
 		self.validate_membership()
+		self.set_subscription_status()
 	
 	def validate_membership(self):
 		if self.gym_member:
@@ -31,3 +32,30 @@ class GymSubscription(Document):
 
 			if len(membership) == 0:
 				frappe.throw(f"Please activate membership for this member: <strong>{self.gym_member}</strong> first")
+	
+	def set_subscription_status(self, caller=None):
+		status = ""
+		if (
+			self.paid == 1 and 
+			(
+				self.start_date and getdate(nowdate()) > getdate(self.start_date)
+				and self.end_date and getdate(nowdate()) <= getdate(self.end_date)
+			)
+		):
+			status = "Active"
+		elif (
+			self.paid == 1 and
+			(
+				self.start_date and 
+				getdate(nowdate()) < getdate(self.start_date)
+			)
+		):
+			status = "On Hold"
+		elif self.paid == 0:
+			status = "Pending"
+		
+		if not caller:
+			self.status = status
+		else:
+			frappe.db.set_value("Gym Subscription", self.name, "status", status)
+	
