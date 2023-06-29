@@ -16,6 +16,8 @@ class GymMembership(Document):
 	def before_submit(self):
 		if getdate(self.start_date) <= getdate(nowdate()) and self.status in ["Pending", "On Hold"]:
 			self.status = "Active"
+		
+		self.validate_payments()
 	
 	def before_cancel(self):
 		self.status = "Cancelled"
@@ -54,4 +56,11 @@ class GymMembership(Document):
 			self.docstatus == 1
 		):
 			self.status = "On Hold"
+
+	def validate_payments(self):
+		if self.paid == 0:
+			frappe.throw("Please pay for this subscription first")
+		
+		if self.paid_amount == 0:
+			frappe.throw("Paid amount cannot be zero")
 	
