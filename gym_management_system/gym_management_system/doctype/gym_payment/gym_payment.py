@@ -16,6 +16,7 @@ class GymPayment(Document):
 	def before_submit(self):
 		self.validate_payment_amount()
 		self.set_payment_date()
+		self.update_references()
 
 	def set_posting_date(self):
 		self.posting_date = nowdate()
@@ -39,3 +40,14 @@ class GymPayment(Document):
 	def set_payment_date(self):
 		self.payment_date = nowdate()
 		self.payment_time = nowtime()
+	
+	def update_references(self):
+		doc = frappe.get_doc(self.reference_doctype, self.reference_name)
+		doc.discount_amount = self.discount_amount
+		doc.paid = 1
+		doc.paid_amount = self.paid_amount
+		doc.payment_date = nowdate()
+		doc.payment_time = nowtime()
+		doc.save()
+		if doc.paid == 1:
+			doc.submit()
