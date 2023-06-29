@@ -15,6 +15,7 @@ class GymPayment(Document):
 	
 	def before_submit(self):
 		self.validate_payment_amount()
+		self.set_payment_date()
 
 	def set_posting_date(self):
 		self.posting_date = nowdate()
@@ -35,3 +36,6 @@ class GymPayment(Document):
 		if (float(self.actual_price) - float(self.discount_amount)) != float(self.paid_amount):
 			frappe.throw("Paid Amount is not equal to required payment amount, please check and revert.")
 	
+	def set_payment_date(self):
+		self.payment_date = nowdate()
+		self.payment_time = nowtime()
