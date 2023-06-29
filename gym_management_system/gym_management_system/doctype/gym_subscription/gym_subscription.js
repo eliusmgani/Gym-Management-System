@@ -2,9 +2,32 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Gym Subscription', {
-	// refresh: function(frm) {
+	refresh: (frm) => {
+		if (frm.doc.paid == 0 && !frm.doc.__islocal) {
+			frm.add_custom_button(__("Make Paymnent"), () => {
+				frappe.new_doc("Gym Payment", {
+					"payment_for": "Subscription"
+				}, doc => {
+					doc.gym_member = frm.doc.gym_member;
+					doc.gym_trainer = frm.doc.gym_trainer;
+					doc.reference_doctype = frm.doc.doctype;
+					doc.reference_name = frm.doc.name;
+					doc.payment_date = frappe.datetime.now_date();
+					doc.payment_time = frappe.datetime.now_time();
+					doc.posting_date = frappe.datetime.now_date();
+					doc.posting_time = frappe.datetime.now_time();
+					doc.actual_price = frm.doc.subscription_amount;
+					doc.discount_amount = frm.doc.discount_amount;
+					doc.paid_amount = frm.doc.subscription_amount - frm.doc.discount_amount;
+				});
+			}).removeClass("btn-default").addClass("btn-warning font-weight-bold")
+		}
+		if (frm.doc.gym_plan) {
+			frm.fields_dict["workouts"].$wrapper.html("");
+			frm.trigger("gym_plan")
+		}
 
-	// }
+	},
 	gym_plan: (frm) => {
 		if (frm.doc.gym_plan) {
 			frappe.db.get_doc("Gym Workout Plan", frm.doc.gym_plan)
