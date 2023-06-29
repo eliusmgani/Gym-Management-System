@@ -33,13 +33,15 @@
   "start_date",
   "end_date",
   "payments_tab",
-  "subscription_amount",
   "subscription_status",
-  "paid_amount",
-  "column_break_kdtgp",
+  "subscription_amount",
   "discount_amount",
+  "amended_from",
+  "column_break_kdtgp",
+  "paid_amount",
   "paid",
-  "amended_from"
+  "payment_date",
+  "payment_time"
  ],
  "fields": [
   {
@@ -192,7 +194,7 @@
    "fieldname": "subscription_status",
    "fieldtype": "Select",
    "label": "Subscription Status",
-   "options": "\nPending\nOn Hold\nActive\nExpired",
+   "options": "Pending\nOn Hold\nActive\nExpired",
    "permlevel": 1,
    "reqd": 1
   },
@@ -242,12 +244,24 @@
    "fieldname": "overview",
    "fieldtype": "Tab Break",
    "label": "Overview"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_time",
+   "fieldtype": "Data",
+   "label": "Payment Time",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-28 15:27:42.948477",
+ "modified": "2023-06-29 15:36:02.001252",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Subscription",
