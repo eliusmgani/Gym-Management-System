@@ -1,0 +1,180 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GP-.####",
+ "creation": "2023-06-28 23:15:33.128035",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gym_member",
+  "member_fullname",
+  "gym_trainer",
+  "trainer_name",
+  "column_break_qvqzz",
+  "payment_for",
+  "reference_doctype",
+  "reference_name",
+  "section_break_pwkrc",
+  "payment_date",
+  "payment_time",
+  "column_break_mju3p",
+  "posting_date",
+  "posting_time",
+  "prices",
+  "actual_price",
+  "discount_amount",
+  "column_break_twghk",
+  "paid_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "gym_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gym Member",
+   "options": "Gym Member",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "gym_member.full_name",
+   "fieldname": "member_fullname",
+   "fieldtype": "Data",
+   "label": "Member FullName"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Reference Doctype",
+   "options": "\nGym Membership\nGym Membership\nGym Subscription",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Reference Name",
+   "options": "reference_doctype",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qvqzz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Payment",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "prices",
+   "fieldtype": "Section Break",
+   "label": "Prices"
+  },
+  {
+   "fieldname": "actual_price",
+   "fieldtype": "Float",
+   "label": "Actual Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Float",
+   "label": "Paid Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_twghk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Float",
+   "label": "Discount Amount"
+  },
+  {
+   "fieldname": "payment_for",
+   "fieldtype": "Select",
+   "label": "Payment For",
+   "options": "\nMembership\nSubscription"
+  },
+  {
+   "fieldname": "payment_time",
+   "fieldtype": "Time",
+   "label": "Payment Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_pwkrc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_mju3p",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gym_trainer",
+   "fieldtype": "Link",
+   "label": "Gym Trainer",
+   "options": "Gym Trainer"
+  },
+  {
+   "fetch_from": "gym_trainer.full_name",
+   "fieldname": "trainer_name",
+   "fieldtype": "Data",
+   "label": "Trainer Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-29 14:33:55.668213",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Payment",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
