@@ -8,6 +8,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "overview_tab",
   "gym_member",
   "full_name",
   "gym_goals",
@@ -15,15 +16,22 @@
   "status",
   "valid_after_end_of_prev_membership",
   "prev_membership",
-  "membership_details_section",
+  "membership_details_tab",
   "membership_option",
   "membership_type",
   "membership_duration",
   "column_break_rd8n",
   "start_date",
   "end_date",
+  "payment_tab",
   "membership_cost",
-  "amended_from"
+  "discount_amount",
+  "amended_from",
+  "column_break_er2ct",
+  "paid_amount",
+  "paid",
+  "payment_date",
+  "payment_time"
  ],
  "fields": [
   {
@@ -53,10 +61,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "membership_details_section",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "start_date",
    "fieldtype": "Date",
    "label": "Membership Start Date",
@@ -83,7 +87,7 @@
    "fetch_from": "membership_option.membership_cost",
    "fetch_if_empty": 1,
    "fieldname": "membership_cost",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "label": "Membership Cost",
    "read_only": 1
   },
@@ -135,12 +139,61 @@
    "options": "Gym Membership",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "overview_tab",
+   "fieldtype": "Tab Break",
+   "label": "Overview"
+  },
+  {
+   "fieldname": "membership_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Membership"
+  },
+  {
+   "fieldname": "payment_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Float",
+   "label": "Discount Amount"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_er2ct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Float",
+   "label": "Paid Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "label": "Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_time",
+   "fieldtype": "Time",
+   "label": "Payment Time",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-25 17:51:33.135481",
+ "modified": "2023-06-29 15:28:38.801257",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Membership",
