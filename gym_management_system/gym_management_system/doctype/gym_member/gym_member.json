@@ -36,7 +36,10 @@
   "pobox",
   "column_break_snc5y",
   "city",
-  "state"
+  "state",
+  "locker_details_tab",
+  "assigned_locker",
+  "locker_number"
  ],
  "fields": [
   {
@@ -199,13 +202,31 @@
    "fieldname": "members_details_tab",
    "fieldtype": "Tab Break",
    "label": "Member's Details"
+  },
+  {
+   "fieldname": "locker_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Locker Details"
+  },
+  {
+   "fieldname": "assigned_locker",
+   "fieldtype": "Link",
+   "label": "Assigned Locker",
+   "options": "Gym Locker",
+   "read_only": 1
+  },
+  {
+   "fieldname": "locker_number",
+   "fieldtype": "Int",
+   "label": "Locker Number",
+   "read_only": 1
   }
  ],
  "image_field": "profile",
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 2,
- "modified": "2023-06-28 14:53:40.385340",
+ "modified": "2023-07-13 15:21:18.551751",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Member",
