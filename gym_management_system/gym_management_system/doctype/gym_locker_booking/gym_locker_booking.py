@@ -28,7 +28,8 @@ class GymLockerBooking(Document):
 		self.validate_payments()
 		self.set_issued_and_return_date()
 		self.set_issuing_status()
-
+		self.assign_locker_to_member()
+		
 	def set_missing_values(self):
 		self.posting_date = nowdate()
 		self.posting_time = nowtime()
@@ -61,3 +62,9 @@ class GymLockerBooking(Document):
 			locker_doc = frappe.get_doc("Gym Locker", self.locker)
 		locker_doc.status = "Issued"
 		locker_doc.save()
+	
+	def assign_locker_to_member(self):
+		gym_member = frappe.get_doc("Gym Member", self.gym_member)
+		gym_member.assigned_locker = self.locker
+		gym_member.locker_number = self.locker_number
+		gym_member.save()
