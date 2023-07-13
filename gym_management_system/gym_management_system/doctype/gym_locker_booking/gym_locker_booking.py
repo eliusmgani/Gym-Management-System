@@ -11,6 +11,18 @@ class GymLockerBooking(Document):
 	
 	def validate(self):
 		self.validate_membership()
+	
+	def before_cancel(self):
+		gym_payment = frappe.get_value("Gym Payment",
+			{ "reference_doctype": self.doctype, "reference_name": self.name, "docstatus": ["<", 2] })
+		
+		if gym_payment:
+			pay_doc = frappe.get_doc("Gym Payment", gym_payment)
+			if pay_doc.docstatus == 0:
+				pay_doc.delete()
+			pay_doc.flags.ignore_links = True
+			pay_doc.cancel()
+			pay_doc.delete()
 
 	def set_missing_values(self):
 		self.posting_date = nowdate()
