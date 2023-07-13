@@ -27,6 +27,7 @@ class GymLockerBooking(Document):
 	def before_submit(self):
 		self.validate_payments()
 		self.set_issued_and_return_date()
+		self.set_issuing_status()
 
 	def set_missing_values(self):
 		self.posting_date = nowdate()
@@ -54,4 +55,9 @@ class GymLockerBooking(Document):
 		self.issued_date = nowdate()
 		if self.duration:
 			self.returning_date = add_days(self.issued_date, self.duration)
-				
+	
+	def set_issuing_status(self):
+		if self.paid == 1:
+			locker_doc = frappe.get_doc("Gym Locker", self.locker)
+		locker_doc.status = "Issued"
+		locker_doc.save()
