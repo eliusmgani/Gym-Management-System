@@ -3,7 +3,13 @@
 
 frappe.ui.form.on('Gym Locker Booking', {
 	refresh: function (frm) {
-		
+		frm.set_query("locker", () => { 
+			return {
+				filters: {
+					"status": "Available"
+				}
+			}
+		});
 		
 
 	}
