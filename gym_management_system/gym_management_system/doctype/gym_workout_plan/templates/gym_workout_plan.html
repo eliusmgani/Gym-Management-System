@@ -1,0 +1,33 @@
+{%  extends 'templates/web.html' %}
+
+{% block page_content %}
+
+<div class="py-20 col-sm-12">
+    
+    <!--<div class='col'>-->
+        <h2 class="text-left">{{ plan_name }}</h2>
+
+        <h5 class="text-left">Workout Level: <b>{{plan_level}}</b>, Trainer: <b>{{ trainer_name }}</b></h5><br>
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <img class="rounded mx-auto d-block" src="{{ plan_image }}" alt="{{ plan_image }}" title="{{ plan_image }} " height="190%">
+            </div>
+            <div class="col-sm-8">
+                <div class="text-left mt-5">
+                    <p>{{ description }}</p>
+
+					<h6>Workout Days:  <b>{{ workout_days }} Days.</b></h6>
+					<h6>Workout Cost:  <b>{{ workout_cost }} Tsh. </b></h6>
+                    
+                    <a href="/subscription-plan/new?workouts={{workout_category}}" class="btn btn-primary">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+ 
