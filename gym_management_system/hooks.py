@@ -121,6 +121,7 @@ scheduler_events = {
 		"gym_management_system.gym_management_system.api.check_membership_expiry",
 		"gym_management_system.gym_management_system.api.check_membership_onhold",
 		"gym_management_system.gym_management_system.api.check_subscription_expiry"
+		"gym_management_system.gym_management_system.api.check_issued_locker"
 	],
 	# "hourly": [
 	# 	"gym_management_system.tasks.hourly"
