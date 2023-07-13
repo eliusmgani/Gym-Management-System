@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GL-.####",
+ "creation": "2023-07-13 07:37:41.378752",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "locker_name",
+  "locker_number",
+  "column_break_s9vs",
+  "status",
+  "price",
+  "image"
+ ],
+ "fields": [
+  {
+   "fieldname": "locker_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Locker Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "locker_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Locker Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_s9vs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nIssued",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "description": "Per Day",
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "label": "Price"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Locker Image"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-13 15:34:47.416426",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Locker",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "locker_name, locker_number, status, price",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
