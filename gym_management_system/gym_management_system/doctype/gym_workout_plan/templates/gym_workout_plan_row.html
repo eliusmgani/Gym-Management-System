@@ -15,11 +15,18 @@
 						<h6>Workout Cost:  {{ workout_cost }} Tsh. </h6>
 						{% set url = frappe.utils.get_url() %}
 						<a href="{{url}}/{{doc.name}}" class="text-success"><b>Read More....!</b></a><br><br>
-						<a href="/subscription-plan/new?workouts={{workout_category}}" class="btn btn-primary">Subscribe</a>
+                    	<button id="subscribe" class="btn btn-primary">Subscribe</button>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+    const button = document.getElementById("subscribe");
+    button.addEventListener("click", function() {
+        alert("This feature is coming soon..!!");
+    });
+</script>
 <!-- this is a sample default list template -->
