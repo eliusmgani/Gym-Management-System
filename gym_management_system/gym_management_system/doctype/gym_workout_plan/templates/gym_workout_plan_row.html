@@ -13,7 +13,8 @@
 					<div class="text-left mt-5">
 						<h6>Workout Days:  {{ workout_days }} Days.</h6>
 						<h6>Workout Cost:  {{ workout_cost }} Tsh. </h6>
-						<a href="http://gym-site:8001/{{doc.name}}" class="text-success"><b>Read More....!</b></a><br><br>
+						{% set url = frappe.utils.get_url() %}
+						<a href="{{url}}/{{doc.name}}" class="text-success"><b>Read More....!</b></a><br><br>
 						<a href="/subscription-plan/new?workouts={{workout_category}}" class="btn btn-primary">Subscribe</a>
 					</div>
 				</div>
